@@ -1335,7 +1335,7 @@ module Pod
         # @return [Array<PodTarget>]
         #
         define_build_settings_method :pod_targets, :memoized => true do
-          target.pod_targets_for_build_configuration(configuration_name)
+          target.pod_targets_for_build_configuration_build_settings(configuration_name)
         end
 
         # @return [Array<PodTarget>]

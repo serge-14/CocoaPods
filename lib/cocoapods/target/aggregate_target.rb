@@ -183,6 +183,20 @@ module Pod
     #         the pod targets should be returned.
     #
     # @return [Array<PodTarget>] the pod targets for the given build
+    #         configuration which should be used for generating build settings.
+    #
+    def pod_targets_for_build_configuration_build_settings(build_configuration)
+      if target_definition.do_not_link_pods
+        []
+      else
+        @pod_targets_for_build_configuration[build_configuration] || []
+      end
+    end
+
+    # @param  [String] build_configuration The build configuration for which the
+    #         the pod targets should be returned.
+    #
+    # @return [Array<PodTarget>] the pod targets for the given build
     #         configuration.
     #
     def pod_targets_for_build_configuration(build_configuration)
